@@ -1,0 +1,11 @@
+
+1. Licencia:
+https://www.pythonguis.com/faq/gpl-and-copyleft-pyqt-pyside/
+
+2. Agregar títulos a las figuras.
+
+
+
+Matplotlib: (pero parece que voy todo a plotly)
+1. optica_diferencia-de-CO
+El botón reiniciar funciona pero no se muestra el relleno, solo el texto.
