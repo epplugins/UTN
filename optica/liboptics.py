@@ -6,6 +6,30 @@ import numpy as np
 import plotly.graph_objects as go
 
 def op_plot_03(y1, z=np.linspace(-2, 5, 500), N=500, Lmax=3.5, dL=0.01):
+    """Graficador con slider. Un haz, cambia n, tiempo fijo.
+
+    Grafica un solo haz, con un cambio de índice de refracción en el
+    camino, y un slider para modificar la longitud del obstáculo.
+
+    Parameters
+    ----------
+    y1 : function
+        Una función que calcule los valores de y para cada valor de z.
+    z : numpy.ndarray
+        Los valores de z donde calcular y1.
+    N : int
+        Cantidad de puntos en el gráfico.
+    Lmax : float
+        Longitud máxima del obstáculo.
+    dL : float
+        Paso entre valores de longitud en el slider.
+
+    Returns
+    -------
+    plotly.graph_objs._figure.Figure
+        Una figura plotly
+    """
+
     fig = go.Figure()
     fig.update_layout(showlegend=False, width=850, height=450)
     fig.update_yaxes(automargin=False)
@@ -106,6 +130,69 @@ def op_plot_03(y1, z=np.linspace(-2, 5, 500), N=500, Lmax=3.5, dL=0.01):
         # shapes=shapes
     )
 
-    fig.show(renderer='notebook')
+    # fig.show(renderer='notebook')
 
+    return fig
+
+def op_plot_04(y1, y2, z=np.linspace(-2, 5, 500), N=500, Lmax=3.5, dL=0.01):
+    """Graficador.
+
+    En proceso de edición.
+
+    Grafica un solo haz, con un cambio de índice de refracción en el
+    camino, y un slider para modificar la longitud del obstáculo.
+
+    Parameters
+    ----------
+    y1, y2 : function
+        Funciones que calculen los valores de y para cada valor de z.
+    z : numpy.ndarray
+        Los valores de z donde calcular y1.
+    N : int
+        Cantidad de puntos en el gráfico.
+    Lmax : float
+        Longitud máxima del obstáculo.
+    dL : float
+        Paso entre valores de longitud en el slider.
+
+    Returns
+    -------
+    plotly.graph_objs._figure.Figure
+        Una figura plotly
+    """
+    L=2
+    ya = [y1(zi) for zi in z]
+    yb = [y2(zi,L) for zi in z]
+
+    fig = go.Figure()
+    fig.update_layout(showlegend=False)
+    fig.update_yaxes(automargin=False)
+    fig.update_xaxes(title_text='z', titlefont=dict(size=18))
+    fig.update_yaxes(title_text='E', titlefont=dict(size=18), title_standoff = 0)
+    fig.update_yaxes(showticklabels=False)
+    # Add traces
+    fig.add_trace(go.Scatter(x=z, y=ya, mode='lines'))
+    fig.add_trace(go.Scatter(x=z, y=yb, mode='lines'))
+
+    fig.add_shape(type="rect",
+        xref="x", yref="y",
+        x0=0, y0=-0.6,
+        x1=2, y1=0.6,
+        line_width=0,
+        fillcolor="PaleTurquoise",
+        opacity=0.5,
+        # layer="below"
+    )
+
+    fig.add_shape(type="rect",
+        xref="x", yref="y",
+        x0=0, y0=-0.6,
+        x1=L, y1=0.6,
+        line=dict(
+            color="LightSeaGreen",
+            width=2,
+        ),
+    )
+
+    # fig.show(renderer='notebook')
     return fig
