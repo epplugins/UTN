@@ -3,3 +3,5 @@
 * Hacer las figuras de los temas: termo, óptica, em
 * ¿Texto en las tarjetas de cada tema? (card body en index.html)
 * íconos en el título
+
+- Cambiar nombre al repositorio (EPF2)
