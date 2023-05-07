@@ -1,0 +1,5 @@
+- Tarjetas de presentación.
+
+- Ubicar botones de navegación siempre al fondo de la pantalla.
+
+- Menú de contenidos.

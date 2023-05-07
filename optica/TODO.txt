@@ -7,6 +7,3 @@ https://www.pythonguis.com/faq/gpl-and-copyleft-pyqt-pyside/
 Html:
 1. Corregir links de retorno, armar una fila con dos columnas.
 
-Matplotlib: (pero parece que voy todo a plotly)
-1. optica_diferencia-de-CO
-El botón reiniciar funciona pero no se muestra el relleno, solo el texto.

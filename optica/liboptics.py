@@ -5,6 +5,12 @@
 import numpy as np
 import plotly.graph_objects as go
 
+def guardar_html(fig, filename):
+    fig = fig.to_html()
+    figstr = fig.replace('<div>', '<div align="center">')
+    with open(filename, "w") as file:
+        file.write(figstr)
+
 def op_plot_03(y1, z=np.linspace(-2, 5, 500), N=500, Lmax=3.5, dL=0.01):
     """Graficador con slider. Un haz, cambia n, tiempo fijo.
 

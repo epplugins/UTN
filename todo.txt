@@ -1,7 +1,14 @@
+HTML:
 * Escribir presentación.
 * Agregar link al repositorio: ¿dónde? ¿cómo?
 * Hacer las figuras de los temas: termo, óptica, em
 * ¿Texto en las tarjetas de cada tema? (card body en index.html)
 * íconos en el título
+- ícono en el título
 
+github:
 - Cambiar nombre al repositorio (EPF2)
+- nombre de los usuarios
+
+plotly:
+- cambiar background color
