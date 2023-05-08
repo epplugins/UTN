@@ -12,3 +12,9 @@ github:
 
 plotly:
 - cambiar background color
+- ajustar distancia del título en eje y
+
+liboptics:
+-op_plot_04:
+    y=0 hardcoded para haz 1, hay que agregar un parámetro para la altura de
+    esa curva, o usar dos ejes.
