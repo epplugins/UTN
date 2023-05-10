@@ -63,6 +63,7 @@ def op_plot_02(y1, z=np.linspace(-2, 5, 500), N=500, Lmax=3.5, dL=0.01, html=Fal
     fig.update_xaxes(title_text='z', titlefont=dict(size=18))
     fig.update_yaxes(title_text='E', titlefont=dict(size=18), title_standoff = 0)
     fig.update_yaxes(showticklabels=False)
+    fig.update_yaxes(range = [-1,1])
 
     # Add traces, one for each slider step
     Ls = np.arange(0, Lmax, dL)
