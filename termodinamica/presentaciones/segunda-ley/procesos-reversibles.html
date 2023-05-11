@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.111.3">
-    <title>F2 - Óptica</title>
+    <title>F2 - Termodinámica</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
 
@@ -82,16 +82,16 @@
 <header class="d-flex align-items-center pt-3 pb-1 mb-3 border-bottom">
     <div class="container-fluid row mb-1">
         <div class="col-md-1"></div>
-        <div class="col-md-1">
+        <div class="col-md-2">
             <a href="/UTN/">
             <img src="../../../assets/img/logoUTN-sm.png" alt="Logo UTN" width="80" loading="lazy">
             </a>
         </div>
-        <div class="col-md-8 text-center">
+        <div class="col-md-6 text-center">
             <p class="lead">Segunda ley de la Termodinámica </p>
         </div>
 
-        <div class="col-md-1 text-end">
+        <div class="col-md-2 text-end">
             <p class="lead">Física 2</p>
         </div>
         <div class="col-md-1"></div>
@@ -119,58 +119,68 @@
                 </div>
             </div>
         </div>
-        <div class="row pt-5 pb-5 justify-content-center">
+        <div class="row pt-5 pb-4 justify-content-center">
             <h5>¿Cuáles de los siguientes procesos son reversibles y cuáles irreversibles?</h5>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="row justify-content-center">
-                    <div class="card card border-primary" style="width: 35rem;">
-                    <div class="card-body">
-                      <h3 class="card-title text-primary">Ejemplos</h3>
-                      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
-                      <h5 class="card-text text-primary">hielo que se derrite. AGREGAR COLAPSIBLE: respuesta</h5>
-                    </div>
-                    </div>
-                </div>
+
+        <div class="container my-3 pb-4">
+          <div class="pt-2 text-center bg-body-tertiary border rounded-3 align-content-center">
+            <p class="lead">
+              Una olla con hielo en una habitación aislada del exterior
+            </p>
+            <img src="img/olla-habitacion.svg" alt="olla" width="1300" loading="lazy">
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+                ¿Reversible o irreversible?
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample1">
+              <div class="card card-body lead">
+                El agua y el aire solo están en equilibrio en el estado final. Desde el comienzo y en los estados intermedios, las temperaturas del agua y del aire son diferentes entre sí, no están en equilibrio. Entonces es un proceso irreversible.
+              </div>
             </div>
-            <div class="col-md-4">
-                <div class="row justify-content-center">
-                    <div class="card card border-primary" style="width: 35rem;">
-                    <div class="card-body">
-                      <h3 class="card-title text-primary">Ejemplos</h3>
-                      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
-                      <h5 class="card-text text-primary">calorimetro.</h5>
-                    </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="row pt-3 justify-content-center">
-            <div class="col-md-4">
-                <div class="row justify-content-center">
-                    <div class="card card border-primary" style="width: 35rem;">
-                    <div class="card-body">
-                      <h3 class="card-title text-primary">Ejemplos</h3>
-                      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
-                      <h5 class="card-text text-primary">expansión contra P constante, pistón y gráfico P-V.</h5>
-                    </div>
-                    </div>
-                </div>
+
+        <div class="container my-3 p-5">
+          <div class="pt-2 text-center bg-body-tertiary border rounded-3 align-content-center">
+            <p class="lead">
+              Gas que se expande contra una presión constante
+            </p>
+            <img src="img/gas-piston.svg" alt="piston" width="800" loading="lazy">
+            <!-- <h3>Cambio de índice de refracción</h3> -->
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                ¿Reversible o irreversible?
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample2">
+              <div class="card card-body lead">
+                El diagrama P-V muestra una curva contínua, por lo tanto se conocen los valores de P y V en cada estado intermedio, y el gas se encuentra permanentemente en equilibrio con el entorno. Como es una sucesión de estados de equilibrio entonces es un proceso reversible.
+              </div>
             </div>
-            <div class="col-md-4">
-                <div class="row justify-content-center">
-                    <div class="card card border-primary" style="width: 35rem;">
-                    <div class="card-body">
-                      <h3 class="card-title text-primary">Ejemplos</h3>
-                      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
-                      <h5 class="card-text text-primary">expansión libre.</h5>
-                    </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
+
+        <div class="container my-3 p-5">
+          <div class="pt-2 text-center bg-body-tertiary border rounded-3 align-content-center">
+            <p class="lead">
+              Gas que se expande contra vacío
+            </p>
+            <img src="img/joule-expansion.svg" alt="joule-expansion" width="800" loading="lazy">
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+                ¿Reversible o irreversible?
+              </a>
+            </p>
+            <div class="collapse" id="collapseExample3">
+              <div class="card card-body lead">
+                Los estados inicial y final son estados de equilibrio, las presiones y los volúmenes están bien definidos. Pero durante la expansión, el gas no está en equilibrio, entonces es un proceso irreversible.
+              </div>
+            </div>
+          </div>
+        </div>
+
 </main>
 
 <footer class="pt-5 my-4 text-body-secondary">
@@ -183,10 +193,10 @@
                         <li class="page-item">
                             <a class="page-link disabled">Anterior</a>
                         </li>
-                        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+                        <li class="page-item"><a class="page-link" href="../../tm.html">Inicio</a></li>
                         <!-- <li class="page-item"><a class="page-link" href="#">2</a></li> -->
                         <li class="page-item">
-                            <a class="page-link" href="reversible-maquina.html">Siguiente</a>
+                            <a class="page-link" href="entropia.html">Siguiente</a>
                         </li>
                     </ul>
                 </nav>
