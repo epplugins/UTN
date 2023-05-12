@@ -6,6 +6,9 @@ HTML:
 * íconos en el título
 - ícono en el título
 
+- entropia.html: agregar figura dq/T
+falta "esto no es entropía"
+
 github:
 - Cambiar nombre al repositorio (EPF2)
 - nombre de los usuarios
