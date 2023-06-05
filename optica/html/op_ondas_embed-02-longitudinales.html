@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
+  <head><script src="../../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,7 @@
 
 
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -122,32 +122,48 @@
 <div class="col-lg-8 mx-auto p-4 py-md-5">
   <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
     <a href="/UTN/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
-        <img src="../assets/img/logoUTN-sm.png" class="d-block mx-lg-auto img-fluid" alt="Logo UTN" width="60" loading="lazy">
+        <img src="../../assets/img/logoUTN-sm.png" class="d-block mx-lg-auto img-fluid" alt="Logo UTN" width="60" loading="lazy">
         <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg> -->
       <span class="fs-4">&nbsp;&nbsp;Física 2</span>
     </a>
   </header>
 
   <main>
-      <a target="_blank" href="https://colab.research.google.com/github/epplugins/UTN/blob/main/optica/op_diferencia-de-CO.ipynb">
-          <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-        </a>
-    <div class="ratio ratio-16x9">
-        <iframe src="difCO-04.html" title="Cambio de índice de refracción - dos haces"></iframe>
+    <div class="container-fluid themed-container">
+      <div class="row pt-1 pb-4">
+        <!-- <p class="fs-3">La solución de la ecuación de ondas puede ser cualquier función que tenga como argumento al grupo x-vt o x+vt.</p> -->
+        <p class="fs-4">La animación inferior puede ser interpretada como el movimiento de las moléculas del medio en una onda de sonido, y la animación superior es la función de la onda propagante que describe el desplazamiento de las moléculas en función de la posición de equilibrio.</p>
+      </div>
+
+
+      <div class="ratio ratio-16x9">
+        <iframe src="ondas_03.html" title="Longitudinales"></iframe>
+      </div>
+
     </div>
   </main>
-  <footer class="pt-5 my-5 text-body-secondary border-top">
-    <div class="container">
-        <p class="float-end mb-1">
-                    <a href="#">Regresar al inicio</a>
-                    <a href="../index.html">Regresar a la página principal</a>
-        </p>
-        <p class="mb-1">&copy; Bootstrap</p>
-      </div>
+  <footer class="pt-5 my-4 text-body-secondary">
+    <div class="container-fluid row text-center">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <nav aria-label="Botones de navegación">
+                <ul class="pagination justify-content-end">
+                    <!-- <li class="page-item"><a class="page-link" href="entropia.html">Anterior</a></li> -->
+                    <li class="page-item"><a class="page-link" href="../op.html">Volver al inicio</a></li>
+                    <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+                    <!-- <li class="page-item"><a class="page-link" href="2da-ley-informacion.html">Siguiente</a></li> -->
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
   </footer>
+
 </div>
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+
 
   </body>
 </html>
