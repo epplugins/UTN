@@ -1,7 +1,9 @@
 
-Potencial Eléctrico
+Potencial Eléctrico de cargas puntuales
 [![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/electromagnetismo/em_potencial.ipynb)
 
+Potencial Eléctrico con conductores
+[![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/electromagnetismo/em_poisson_solver.ipynb)
 
 
 ## Entorno
