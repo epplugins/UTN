@@ -2,6 +2,8 @@
 Optica con matplotlib:
 [![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/optica/matplotlib-optica_diferencia-de-CO.ipynb)
 
+Optica con plotly:
+[![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/optica/op_diferencia-de-CO.ipynb)
 
 
 
