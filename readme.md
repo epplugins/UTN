@@ -2,9 +2,6 @@
 Optica con matplotlib:
 [![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/optica/matplotlib-optica_diferencia-de-CO.ipynb)
 
-Forzadas:
-[![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/oscilaciones/forzadas.ipynb)
-
 
 
 
