@@ -1,3 +1,5 @@
+No está funcionando. Uso inkscape.
+
 # output dvi from latex file:
 
 latex em01_una_carga.tex
