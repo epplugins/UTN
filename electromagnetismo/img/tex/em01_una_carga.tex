@@ -36,7 +36,7 @@
 	% \pgfmathsetmacro{\qphi}{63.5}
 	%
 
-	\begin{tikzpicture}[tdplot_main_coords]
+	\begin{tikzpicture}[tdplot_main_coords, every node/.style={scale=1.75}]
 		%Axis
 		\draw[axis] (0,0,0) -- (3.5*\sca,0,0) node [pos=1.05] {$i$};
 		\draw[axis] (0,0,0) -- (0,3.5*\sca,0) node [pos=1.05] {$j$};
@@ -47,7 +47,7 @@
 		\draw[dashed] (0,\qy,0) -- (\qx,\qy,0) node [pos=0, above] {$y_0$};
 		\draw[dashed] (0,0,\qz) -- (\qx,\qy,\qz) node [pos=0, left] {$z_0$};
 		\draw[vec] (0,0,0) -- (\qx-0.1,\qy-0.1,\qz-0.1) node[pos=0.5, above left] {$\vec{\text{x}}_0$};
-		
+
 		%P
 		\draw[dashed] (\px,0,0) -- (\px,\py,0) node [pos=0, above left] {$x$};
 		\draw[dashed] (0,\py,0) -- (\px,\py,0) node [pos=0, above] {$y$};
@@ -59,7 +59,7 @@
 		\fill[white] (\qx,\qy,1.15) circle (4pt);
 		\fill[white] (\qx,\qy,1.95) circle (3pt);
 		\draw[dashed] (\qx,\qy,\qz) -- (\qx,\qy,0);
-		
+
 		\draw[vec, red] (\qx,\qy,\qz) -- (\px,\py,\pz) node[pos=0.4, above] {$\vec{\text{r}}$};
 		\fill[black] (\qx,\qy,\qz) circle (2.3pt) node [above] {$q$};
 
