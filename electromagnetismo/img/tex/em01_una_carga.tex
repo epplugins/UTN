@@ -36,20 +36,20 @@
 	% \pgfmathsetmacro{\qphi}{63.5}
 	%
 
-	\begin{tikzpicture}[tdplot_main_coords, every node/.style={scale=1.75}]
+	\begin{tikzpicture}[tdplot_main_coords, every node/.style={scale=2.5}]
 		%Axis
 		\draw[axis] (0,0,0) -- (3.5*\sca,0,0) node [pos=1.05] {$i$};
 		\draw[axis] (0,0,0) -- (0,3.5*\sca,0) node [pos=1.05] {$j$};
 		\draw[axis] (0,0,0) -- (0,0,3.8*\sca)  node [pos=1.05] {$k$};
 
 		%Charge
-		\draw[dashed] (\qx,0,0) -- (\qx,\qy,0) node [pos=0, above left] {$x_0$};
+		\draw[dashed] (\qx,0,0) -- (\qx,\qy,0) node [pos=0, left] {$x_0$};
 		\draw[dashed] (0,\qy,0) -- (\qx,\qy,0) node [pos=0, above] {$y_0$};
 		\draw[dashed] (0,0,\qz) -- (\qx,\qy,\qz) node [pos=0, left] {$z_0$};
-		\draw[vec] (0,0,0) -- (\qx-0.1,\qy-0.1,\qz-0.1) node[pos=0.5, above left] {$\vec{\text{x}}_0$};
+		\draw[vec] (0,0,0) -- (\qx-0.1,\qy-0.1,\qz-0.1) node[pos=0.75, left] {$\vec{\text{x}}_0$};
 
 		%P
-		\draw[dashed] (\px,0,0) -- (\px,\py,0) node [pos=0, above left] {$x$};
+		\draw[dashed] (\px,0,0) -- (\px,\py,0) node [pos=0, left] {$x$};
 		\draw[dashed] (0,\py,0) -- (\px,\py,0) node [pos=0, above] {$y$};
 		\fill[white] (\px,\py,0.8) circle (3pt);
 		\draw[dashed] (\px,\py,\pz) -- (\px,\py,0);
@@ -61,7 +61,7 @@
 		\draw[dashed] (\qx,\qy,\qz) -- (\qx,\qy,0);
 
 		\draw[vec, red] (\qx,\qy,\qz) -- (\px,\py,\pz) node[pos=0.4, above] {$\vec{\text{r}}$};
-		\fill[black] (\qx,\qy,\qz) circle (2.3pt) node [above] {$q$};
+		\fill[black] (\qx,\qy,\qz) circle (3pt) node [above] {$q$};
 
 		\draw[vec, red] (\px,\py,\pz) -- +(0.4*\px-0.4*\qx, 0.4*\py - 0.4*\qy, 0.4*\pz - 0.4*\qz) node[pos=0.4, above] {$\hat{r}$};
 
