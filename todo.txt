@@ -16,6 +16,7 @@ HTML:
 * íconos en el título
 - ícono en el título
 - Agregar CSS: estilo de los links tag a.
+- force refresh
 
 - entropia.html: agregar figura dq/T
 falta "esto no es entropía"
