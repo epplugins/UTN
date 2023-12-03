@@ -11,11 +11,11 @@ Logo utn, distintas versiones:
 
 HTML:
 * Escribir presentación.
-* Agregar link al repositorio: ¿dónde? ¿cómo?
 * Hacer las figuras de los temas: termo, óptica, em
 * ¿Texto en las tarjetas de cada tema? (card body en index.html)
 * íconos en el título
 - ícono en el título
+- Agregar CSS: estilo de los links tag a.
 
 - entropia.html: agregar figura dq/T
 falta "esto no es entropía"
