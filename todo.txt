@@ -1,8 +1,9 @@
 Licencia:
-CC
-incluir archivo en el raiz del repositorio, además de los links en los archivos.
+¿CC o GPL?
+¿incluir archivo en el raiz del repositorio, además de los links en los archivos?
 ¿Qué otro procedimiento es requerido?
-En el readme del repositorio: "El contenido de este repositorio está bajo la licencia CC (ver archivo licencia.txt). Algunos archivos contienen un enlace a la licencia que la organización emisora puede ir actualizando. La licencia que rige en ese caso es la versión más nueva entre las dos."
+¿La licencia del repositorio vale para todo el contenido?
+¿Se puede usar las dos dentro de un mismo repositorio? (CC para algunas cosas, GPL para otras)
 
 
 Logo utn, distintas versiones:
