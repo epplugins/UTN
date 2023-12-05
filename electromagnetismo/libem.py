@@ -103,7 +103,7 @@ def plotEf(Ef, Q, dx, **params):
         dy = dx
     Y, X = np.mgrid[-dx:dx:w, -dy:dy:w]
     Z = 0*X
-    
+
     Ei, Ej, Ek = Ef(X,Y,Z,Q)
 
     fig, axs = plt.subplots(1, 1, figsize=figsize)
@@ -119,27 +119,121 @@ def plotEf(Ef, Q, dx, **params):
     plt.grid()
 
 
-# def potentialPeaksSingle(frame, nFrame, peaks = [], singleuse = False, **params):
-#     """Finds all blobs that are potential spots in a single frame.
+def plotEfvector(Ef, Q, X, limites, **params):
+    """
+    Muestra las vectores del campo en 2D usando pyplot.quiver.
 
-#     Parameters
-#     ----------
-#     frame :
+    Parameters
+    ----------
+    Ef : function
+        Una función de un campo vectorial (3 variables que devuelve 3 componentes).
+    Q : list
+        Q = [
+            [q1,x1,y1,z1],
+            [q2,x2,y2,z2],
+            ...
+            [qN,xN,yN,zN]
+        ]
+    X : tuple
+        Posiciones donde se calcula el campo.
 
-#     nFrame : int
-#         Frame number.
+    *Además de los parámetros de matplotlib y quiver, por ejemplo:*
+    length : float
+    figsize : tuple
+    title : string
+    """
 
-#     peaks : pandas.DataFrame
+    figsize = params.get('figsize', (4,4))
 
-#     singleuse : bool
-#         To be used for a single frame, instead of processing a full MRC movie.
+    x_pos = []
+    y_pos = []
+    Ei = []
+    Ej = []
+    for x in X:
+        Eii, Ejj, Ekk = Ef(x[0],x[1],x[2],Q)
+        x_pos = np.concatenate((x_pos,x[0]), axis=None)
+        y_pos = np.concatenate((y_pos,x[1]), axis=None)
+        N = np.sqrt(Eii**2 + Ejj**2)
+        Ei = np.concatenate((Ei, Eii/N), axis=None)
+        Ej = np.concatenate((Ej, Ejj/N), axis=None)
 
-#     Other parameters
-#     ----------------
-#     See potentialPeaks().
+    # Creating plot
+    fig, ax = plt.subplots(figsize = figsize)
+    ax.quiver(x_pos, y_pos, Ei, Ej)
 
-#     Returns
-#     -------
-#     pandas.DataFrame
-#         Multi array .. to be completed.
-#     """
+    for q in Q:
+        qq, xq, yq, zq = q
+        circ = plt.Circle((xq,yq), np.max(np.abs(X))*0.02, color='red')
+        ax.add_patch(circ)
+    # ax.set_title(title)
+    ax.set_xlabel('$x$ [m]')
+    ax.set_ylabel('$y$ [m]')
+    ax.axis(limites)
+    plt.show()
+
+
+def plotEfvector3d(Ef, Q, dx, **params):
+    """
+    Muestra las vectores del campo en 3D usando pyplot.quiver.
+
+    Parameters
+    ----------
+    Ef : function
+        Una función de un campo vectorial (3 variables que devuelve 3 componentes).
+    Q : list
+        Q = [
+            [q1,x1,y1,z1],
+            [q2,x2,y2,z2],
+            ...
+            [qN,xN,yN,zN]
+        ]
+    dx : float
+        Se produce una grilla con -dx <= x <= dx. Si dy = 0,
+        se usan los mismos intervalos para esa variable: -dx <= y <= dx.
+    dy : float
+        Cuando no es 0, la grilla puede tener distintas dimensiones en cada eje.
+    w : integer
+        Cantidad de particiones de cada dimensión en la grilla.
+    axs : matplotlib axes object
+
+    *Además de los parámetros de matplotlib y quiver, por ejemplo:*
+    length : float
+    figsize : tuple
+    title : string
+    """
+
+    dy = params.get('dy', 0)
+    w = params.get('w', 100)
+    length = params.get('length', dx * 0.15)
+
+    figsize = params.get('figsize', (4,4))
+    title = params.get('title', 'Líneas de campo')
+    linewidth = params.get('linewidth', 0.4)
+
+    # Convirtiendo w a número complejo se incluye el extremo del intervalo en mgrid.
+    w = w * 1j
+    if (dy==0):
+        dy = dx
+        dz = dx
+    X, Y, Z = np.mgrid[-dx:dx:w, -dy:dy:w, -dz:dz:w]
+
+    Ei, Ej, Ek = Ef(X,Y,Z,Q)
+
+    fig, axs = plt.subplots(1, 1, figsize=figsize)
+    axs = fig.add_subplot(projection='3d')
+    axs.quiver(X, Y, Z, Ei, Ej, Ek, length=length, normalize=True)
+
+    # Graficar las cargas.
+    u = np.linspace(0, 2 * np.pi, 100)
+    v = np.linspace(0, np.pi, 100)
+    xc = dx * 0.04 * np.outer(np.cos(u), np.sin(v))
+    yc = dx * 0.04 * np.outer(np.sin(u), np.sin(v))
+    zc = dx * 0.04 * np.outer(np.ones(np.size(u)), np.cos(v))
+
+    for q in Q:
+        qq, xq, yq, zq = q
+        axs.plot_surface(xc + xq, yc + yq, zc + zq, color='r')
+    axs.set_title(title)
+    axs.set_xlabel('$x$ [m]')
+    axs.set_ylabel('$y$ [m]')
+    plt.grid()

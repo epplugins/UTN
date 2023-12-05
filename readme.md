@@ -43,7 +43,7 @@ conda create -n utn -c conda-forge python=3.11
 ```
 
 ```bash
-conda install -n utn -c conda-forge matplotlib numpy pandas jupyter_server scikit-image tikzplotlib
+conda install -n utn -c conda-forge matplotlib numpy pandas jupyter_server scikit-image tikzplotlib yt
 ```
 
 Animations:
