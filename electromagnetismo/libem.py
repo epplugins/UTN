@@ -21,11 +21,10 @@ def plotE(E, dx, **params):
     dx : float
         Se produce una grilla con -dx <= x <= dx. Si dy = 0,
         se usan los mismos intervalos para esa variable: -dx <= y <= dx.
-    dy : float
-        Cuando no es 0, la grilla puede tener distintas dimensiones en cada eje.
-    w : integer
+    dy : float (opcional)
+        La grilla puede tener distintas dimensiones en cada eje.
+    w : integer (opcional)
         Cantidad de particiones de cada dimensión en la grilla.
-    axs : matplotlib axes object
 
     *Además de los parámetros de matplotlib y streamplot, por ejemplo:*
     figsize : tuple
@@ -78,11 +77,10 @@ def plotEf(Ef, Q, dx, **params):
     dx : float
         Se produce una grilla con -dx <= x <= dx. Si dy = 0,
         se usan los mismos intervalos para esa variable: -dx <= y <= dx.
-    dy : float
-        Cuando no es 0, la grilla puede tener distintas dimensiones en cada eje.
-    w : integer
+    dy : float (opcional)
+        La grilla puede tener distintas dimensiones en cada eje.
+    w : integer (opcional)
         Cantidad de particiones de cada dimensión en la grilla.
-    axs : matplotlib axes object
 
     *Además de los parámetros de matplotlib y streamplot, por ejemplo:*
     figsize : tuple
@@ -108,10 +106,14 @@ def plotEf(Ef, Q, dx, **params):
 
     fig, axs = plt.subplots(1, 1, figsize=figsize)
     strm = axs.streamplot(X, Y, Ei, Ej, color='b',
-                        linewidth=linewidth, density=density)
+                        linewidth=linewidth, **params)
     for q in Q:
         qq, xq, yq, zq = q
-        circ = plt.Circle((xq,yq), dx*0.02, color='red')
+        if qq > 0:
+            colorq = 'red'
+        else :
+            colorq = 'green'
+        circ = plt.Circle((xq,yq), dx*0.02, color=colorq)
         axs.add_patch(circ)
     axs.set_title(title)
     axs.set_xlabel('$x$ [m]')
@@ -153,23 +155,27 @@ def plotEfvector(Ef, Q, X, limites, **params):
         Eii, Ejj, Ekk = Ef(x[0],x[1],x[2],Q)
         x_pos = np.concatenate((x_pos,x[0]), axis=None)
         y_pos = np.concatenate((y_pos,x[1]), axis=None)
-        N = np.sqrt(Eii**2 + Ejj**2)
+        N = np.sqrt(Eii**2 + Ejj**2)*1.5
         Ei = np.concatenate((Ei, Eii/N), axis=None)
         Ej = np.concatenate((Ej, Ejj/N), axis=None)
 
     # Creating plot
     fig, ax = plt.subplots(figsize = figsize)
-    ax.quiver(x_pos, y_pos, Ei, Ej)
+    ax.quiver(x_pos, y_pos, Ei, Ej, angles='xy', scale_units='xy', scale=1)
 
     for q in Q:
         qq, xq, yq, zq = q
-        circ = plt.Circle((xq,yq), np.max(np.abs(X))*0.02, color='red')
+        if qq > 0:
+            colorq = 'red'
+        else :
+            colorq = 'green'
+        circ = plt.Circle((xq,yq), np.max(np.abs(X))*0.02, color=colorq)
         ax.add_patch(circ)
     # ax.set_title(title)
     ax.set_xlabel('$x$ [m]')
     ax.set_ylabel('$y$ [m]')
     ax.axis(limites)
-    plt.show()
+    # plt.show()
 
 
 def plotEfvector3d(Ef, Q, dx, **params):
@@ -190,11 +196,10 @@ def plotEfvector3d(Ef, Q, dx, **params):
     dx : float
         Se produce una grilla con -dx <= x <= dx. Si dy = 0,
         se usan los mismos intervalos para esa variable: -dx <= y <= dx.
-    dy : float
-        Cuando no es 0, la grilla puede tener distintas dimensiones en cada eje.
-    w : integer
+    dy : float (opcional)
+        La grilla puede tener distintas dimensiones en cada eje.
+    w : integer (opcional)
         Cantidad de particiones de cada dimensión en la grilla.
-    axs : matplotlib axes object
 
     *Además de los parámetros de matplotlib y quiver, por ejemplo:*
     length : float
@@ -232,7 +237,11 @@ def plotEfvector3d(Ef, Q, dx, **params):
 
     for q in Q:
         qq, xq, yq, zq = q
-        axs.plot_surface(xc + xq, yc + yq, zc + zq, color='r')
+        if qq > 0:
+            colorq = 'red'
+        else :
+            colorq = 'green'
+        axs.plot_surface(xc + xq, yc + yq, zc + zq, color=colorq)
     axs.set_title(title)
     axs.set_xlabel('$x$ [m]')
     axs.set_ylabel('$y$ [m]')
