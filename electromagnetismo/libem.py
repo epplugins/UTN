@@ -212,7 +212,7 @@ def plotEfvector3d(Ef, Q, dx, **params):
     length = params.get('length', dx * 0.15)
 
     figsize = params.get('figsize', (4,4))
-    title = params.get('title', 'Líneas de campo')
+    title = params.get('title', 'Campo eléctrico')
     linewidth = params.get('linewidth', 0.4)
 
     # Convirtiendo w a número complejo se incluye el extremo del intervalo en mgrid.
