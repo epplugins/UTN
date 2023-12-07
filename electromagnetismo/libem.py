@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# TODO: remove warnings divide by zero. Return axs, add
+# TODO: Return axs, add
 # more control over plotting parameters.
 # Add examples in the docstring.
 def plotE(E, dx, **params):
@@ -56,7 +56,7 @@ def plotE(E, dx, **params):
     axs.set_ylabel('$y$ [m]')
 
 
-# TODO: remove warnings divide by zero. Return axs, add
+# TODO: Return axs, add
 # more control over plotting parameters.
 # Add examples in the docstring.
 def plotEf(Ef, Q, dx, **params):
@@ -106,7 +106,7 @@ def plotEf(Ef, Q, dx, **params):
 
     fig, axs = plt.subplots(1, 1, figsize=figsize)
     strm = axs.streamplot(X, Y, Ei, Ej, color='b',
-                        linewidth=linewidth, **params)
+                        linewidth=linewidth, density=density)
     for q in Q:
         qq, xq, yq, zq = q
         if qq > 0:
@@ -121,7 +121,7 @@ def plotEf(Ef, Q, dx, **params):
     plt.grid()
 
 
-def plotEfvector(Ef, Q, X, limites, **params):
+def plotEfvector(Ef, Q, X, **params):
     """
     Muestra las vectores del campo en 2D usando pyplot.quiver.
 
@@ -138,6 +138,10 @@ def plotEfvector(Ef, Q, X, limites, **params):
         ]
     X : tuple
         Posiciones donde se calcula el campo.
+    limites : tuple
+        Lmites de los ejes: [xmin, xmax, ymin, ymax]
+    scale : float
+        Regula la longitud de las flechas.
 
     *Además de los parámetros de matplotlib y quiver, por ejemplo:*
     length : float
@@ -146,13 +150,26 @@ def plotEfvector(Ef, Q, X, limites, **params):
     """
 
     figsize = params.get('figsize', (4,4))
+    title = params.get('title', "Algunos vectores de campo eléctrico")
+    scale = params.get('scale', 1)
 
+    xmin, xmax, ymin, ymax = 0,0,0,0
     x_pos = []
     y_pos = []
     Ei = []
     Ej = []
     for x in X:
         Eii, Ejj, Ekk = Ef(x[0],x[1],x[2],Q)
+
+        # Elige límites para cuando el parámetro límites no es informado.
+        if x[0] > xmax:
+            xmax = x[0]
+        if x[0] < xmin:
+            xmin = x[0]
+        if x[1] > ymax:
+            ymax = x[1]
+        if x[1] < ymin:
+            ymin = x[1]
         x_pos = np.concatenate((x_pos,x[0]), axis=None)
         y_pos = np.concatenate((y_pos,x[1]), axis=None)
         N = np.sqrt(Eii**2 + Ejj**2)*1.5
@@ -161,10 +178,20 @@ def plotEfvector(Ef, Q, X, limites, **params):
 
     # Creating plot
     fig, ax = plt.subplots(figsize = figsize)
-    ax.quiver(x_pos, y_pos, Ei, Ej, angles='xy', scale_units='xy', scale=1)
+    ax.quiver(x_pos, y_pos, Ei, Ej, angles='xy', scale_units='xy', scale=scale)
 
     for q in Q:
         qq, xq, yq, zq = q
+        # Elige límites para cuando el parámetro límites no es informado.
+        if xq > xmax:
+            xmax = xq
+        if xq < xmin:
+            xmin = xq
+        if yq > ymax:
+            ymax = yq
+        if yq < ymin:
+            ymin = yq
+
         if qq > 0:
             colorq = 'red'
         else :
@@ -174,8 +201,18 @@ def plotEfvector(Ef, Q, X, limites, **params):
     # ax.set_title(title)
     ax.set_xlabel('$x$ [m]')
     ax.set_ylabel('$y$ [m]')
+
+    # Se expanden los límites automáticos:
+    xmax = xmax + (xmax - xmin)*0.2
+    xmin = xmin - (xmax - xmin)*0.2
+    ymax = ymax + (ymax - ymin)*0.2
+    ymin = ymin - (ymax - ymin)*0.2
+
+    limites = params.get('limites', [xmin,xmax,ymin,ymax])
     ax.axis(limites)
-    # plt.show()
+    ax.set_title(title)
+    plt.show()
+    # plt.close()
 
 
 def plotEfvector3d(Ef, Q, dx, **params):
