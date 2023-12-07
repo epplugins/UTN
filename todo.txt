@@ -26,12 +26,12 @@ github:
 - Cambiar nombre al repositorio (EPF2)
 - nombre de los usuarios
 
-Pagina de referencias:
+Referencias:
 - Agregar un html con referencias y un link en el Readme.
 - Notación de vectores y math:
 https://en.wikipedia.org/wiki/Vector_notation#cite_note-3
 https://www.iso.org/standard/64973.html  (how to cite?)
-
+- em02: calculo de integrales sumando porciones pequeñas.
 
 plotly:
 - cambiar background color
