@@ -149,7 +149,7 @@ def plotEfvector(Ef, Q, X, **params):
     title : string
     """
 
-    figsize = params.get('figsize', (4,4))
+    figsize = params.get('figsize', (5,5))
     title = params.get('title', "Algunos vectores de campo eléctrico")
     scale = params.get('scale', 1)
 
