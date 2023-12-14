@@ -210,6 +210,13 @@ def plotEfcontribuciones(Ef, Q, x, **params):
     Ej = np.round(Ej/np.max(modulos),3)
     Ek = np.round(Ek/np.max(modulos),3)
 
+    if in3D:
+        limites = params.get('limites', [xmin,xmax,ymin,ymax, zmin, zmax])
+    else:
+        limites = params.get('limites', [xmin,xmax,ymin,ymax])
+
+    arrwidth = params.get('arrwidth', 0.005*(limites[1]-limites[0]))
+    
     # Creating plot
     if in3D:
         pass
@@ -217,12 +224,11 @@ def plotEfcontribuciones(Ef, Q, x, **params):
         fig, ax = plt.subplots(figsize = figsize)
 
         # ax.quiver(x_pos, y_pos, Ei, Ej, angles='xy', scale_units='xy', scale=scale)
-        ax.quiver(x_pos, y_pos, Ei, Ej, scale=scale)
+        ax.quiver(x_pos, y_pos, Ei, Ej, scale=scale, width=arrwidth)
 
         # Necesito un for separado para determinar el tamaño de los círculos.
         for q in Q:
             qq, xq, yq, zq = q
-
             ax.plot([xq,x[0]], [yq,x[1]], color='b', linewidth=linewidth, linestyle='dashed')
             if qq > 0:
                 colorq = 'red'
@@ -233,7 +239,6 @@ def plotEfcontribuciones(Ef, Q, x, **params):
         # ax.set_title(title)
         ax.set_xlabel('$x$ [m]')
         ax.set_ylabel('$y$ [m]')
-        limites = params.get('limites', [xmin,xmax,ymin,ymax])
 
     ax.axis(limites)
     ax.set_title(title)
