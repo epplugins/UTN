@@ -6,6 +6,9 @@ Licencia:
 ¿Se puede usar las dos dentro de un mismo repositorio? (CC para algunas cosas, GPL para otras)
 
 
+Matplotlib:
+- %matplotlib widgets works best for interactive figures in VSCode, but it won't reload thhe figures after closing the file.
+
 Logo utn, distintas versiones:
 - el logo grande, circulo blanco de fondo, y sobre fondo transparente.
 - sin fondo blanco, con fondo transparente.
