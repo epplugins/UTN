@@ -43,21 +43,26 @@ conda create -n utn -c conda-forge python=3.11
 ```
 
 ```bash
-conda install -n utn -c conda-forge matplotlib numpy pandas jupyter_server scikit-image tikzplotlib sympy
+conda install -n utn -c conda-forge jupyter
 ```
-
-Animations:
-```bash
-conda install -n utn -c conda-forge manim
-```
-
-
 
 Para crear gráficos interactivos dentro de VS Code:
 ```bash
 conda install -n utn -c conda-forge ipympl
 ```
 
+```bash
+conda install -n utn -c conda-forge matplotlib numpy pandas scikit-image tikzplotlib sympy
+```
+
+No instalado aun:
+Animations:
+```bash
+conda install -n utn -c conda-forge manim
+```
+
+
+No instalado:
 ```bash
 conda install -n utn -c plotly plotly
 ```
