@@ -1,0 +1,4 @@
+{
+    "python.analysis.userFileIndexingLimit": 2000,
+    "python.analysis.useLibraryCodeForTypes": false
+}
