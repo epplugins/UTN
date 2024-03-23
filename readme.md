@@ -72,3 +72,5 @@ Puede ser necesario agregar esto en settings.json:
 ```bash
 "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
 ```
+
+
