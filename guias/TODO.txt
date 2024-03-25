@@ -5,6 +5,8 @@
 
 Termodinamica:
 
+Ejercicio "se colocan 0,2 moles" faltan las respuestas.
+
 http://pgfplots.sourceforge.net/gallery.html
 
 https://ctan.org/pkg/pgf?lang=en

@@ -2,6 +2,8 @@
 \setcounter{figure}{0}
 %
 \begin{Exercise}
+  \ifthenelse{\equal{\seleccionados}{true}}
+  {\addToList{xyz-transmision}{\ExerciseHeaderNB}}{}
   Un extremo de una varilla metálica aislada se mantiene a $\SI{100}{\celsius}$, y el otro se mantiene a $\SI{0}{\celsius}$ con una mezcla de hielo y agua. La varilla tiene $\SI{60}{\centi\metre}$ de longitud y el área de su sección transversal es $\SI{1.25}{\square\centi\metre}$. El calor conducido por la varilla funde $\SI{8.5}{\gram}$ de hielo cada $\SI{10}{\minute}$. Calcule la conductividad térmica del metal.
 \end{Exercise}
 \begin{Answer}
@@ -27,6 +29,8 @@
 \end{Answer}
 %
 \begin{Exercise}\label{p:transmision00}
+  \ifthenelse{\equal{\seleccionados}{true}}
+  {\addToList{xyz-transmision}{\ExerciseHeaderNB}}{}
   En una casa se tiene una pared de ladrillos de $\SI{3}{\metre} \times \SI{4}{\metre}$, y espesor $\SI{15}{\centi\metre}$, que separa un ambiente a $\SI{25}{\celsius}$ del exterior a $\SI{5}{\celsius}$. Esta pared contiene una ventana que consiste en solo un panel de vidrio de $\SI{1.5}{\metre} \times \SI{1.5}{\metre} \times \SI{5}{\milli\metre}$. \textit{a}) Calcular la corriente de calor total a través del concreto y la ventana, sin incluir efectos de convección. \textit{b}) ¿Cuál es el porcentaje de calor que se pierde a través de la ventana respecto del total? \textit{Datos}: conductividad térmica del ladrillo = $\SI{0.6}{\watt.\metre^{-1}.\kelvin^{-1}}$; conductividad térmica del vidrio = $\SI{1}{\watt.\metre^{-1}.\kelvin^{-1}}$.
 \end{Exercise}
 \begin{Answer}
@@ -37,6 +41,8 @@
 %
 %No se informan las conductividades, con la intención de que los estudiantes las busquen.
 \begin{Exercise}
+  \ifthenelse{\equal{\seleccionados}{true}}
+  {\addToList{xyz-transmision}{\ExerciseHeaderNB}}{}
   Dos barras, una de latón y otra de cobre, están unidas extremo con extremo. La longitud de la barra de latón es $\SI{0.2}{\metre}$ y la de cobre es $\SI{0.8}{\metre}$. La sección transversal de cada segmento tiene un área de $\SI{0.005}{\square\metre}$. El extremo libre del segmento de latón está en contacto con agua hirviendo y el extremo libre del segmento de cobre se encuentra en contacto con una mezcla de hielo y agua, en ambos casos a presión atmosférica normal. Los lados de las varillas están aislados, por lo que no hay pérdida de calor a los alrededores. \textit{a}) ¿Cuál es la temperatura del punto en el que los segmentos de latón y de cobre se unen? \textit{b}) ¿Qué masa de hielo se funde en $\SI{5}{\minute}$ por el calor conducido por la varilla compuesta?
 \end{Exercise}
 \begin{Answer}
@@ -80,6 +86,8 @@
 \end{Answer}
 %
 \begin{Exercise}
+  \ifthenelse{\equal{\seleccionados}{true}}
+  {\addToList{xyz-transmision}{\ExerciseHeaderNB}}{}
   La emisividad del tungsteno es $0.350$. Una esfera de tungsteno con un radio de $\SI{1.5}{\centi\metre}$ se suspende dentro de una cavidad grande, cuyas paredes están a $\SI{290}{\kelvin}$. ¿Qué aporte de potencia se requiere para mantener la esfera a una temperatura de $\SI{3000}{\kelvin}$, si se desprecia la conducción de calor por los soportes?
 \end{Exercise}
 \begin{Answer}
@@ -90,6 +98,8 @@
   La tasa de energía radiante que llega del Sol a la atmósfera superior de la Tierra es cercana a $\SI{1.5}{\kilo\watt/\square\metre}$. La distancia promedio de la Tierra al Sol es $\SI{1.5E11}{\metre}$ y el radio del Sol es $\SI{6.96E8}{\metre}$. \textit{a}) Calcule la tasa de radiación de energía por unidad de área de la superficie solar. \textit{b}) Si el Sol irradia como cuerpo negro ideal, ¿qué temperatura tiene en su superficie?
 \end{Exercise}
 \begin{Answer}
-  \textit{a}) $\approx\SI{70}{\mega\watt/\square\metre}$\\ \textit{b}) $\approx\SI{5900}{\kelvin}$
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\approx\SI{70}{\mega\watt/\square\metre}$\\ \textit{b}) $\approx\SI{5900}{\kelvin}$
+  \end{minipage}
 \end{Answer}
 %

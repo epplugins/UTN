@@ -1,9 +1,12 @@
 \newcommand{\anio}{2024}
 \newcommand{\comision}{2\textsuperscript{do} 31}
 
+% Imprimir lista de ejercicios seleccionados para hacer en clase.
+\newcommand{\seleccionados}{false}
+
+
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
 \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
-
 
 \renewcommand\spanishtablename{Tabla}
 
@@ -121,4 +124,34 @@
 		\draw[cyan!30] (0,0) circle (30pt);
 	\end{scope}
 }
+%---------------------------
+
+
+%---------------------------
+%
+% Genera una lista dinámica con
+% ejercicios seleccionados.
+%
+%---------------------------
+
+\let\svaddtocontents\addtocontents
+\makeatletter
+\newcommand\defineList[1]{%
+ \expandafter\def\csname add#1line\endcsname##1##2##3{\addtocontents {##1}{%
+  \protect \csname #1line\endcsname {##2}{##3}}}
+ \expandafter\def\csname write#1\endcsname{%
+  \renewcommand\addtocontents[2]{\relax}%
+  \setcounter{section}{0}\noindent%
+  \expandafter\def\csname #1line\endcsname####1####2{\expandafter\csname####1\endcsname{####2}}%
+  \@starttoc{#1}%
+  \setcounter{section}{0}%
+  \let\addtocontents\svaddtocontents%
+ }%
+ \csname add#1line\endcsname{#1}{begin}{itemize}%
+ \AtEndDocument{\csname add#1line\endcsname{#1}{end}{itemize}}
+}
+\newcommand\addToList[2]{\csname add#1line\endcsname{#1}{item}{#2}}
+\newcommand\printList[1]{\csname write#1\endcsname}
+\makeatother
+
 %---------------------------

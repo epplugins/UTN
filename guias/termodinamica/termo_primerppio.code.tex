@@ -11,6 +11,8 @@
 \end{Answer}
 %
 \begin{Exercise}
+  \ifthenelse{\equal{\seleccionados}{true}}
+  {\addToList{xyz-primerppio}{\ExerciseHeaderNB}}{}
   Un tanque cilíndrico tiene un pistón ajustado que permite modificar el volumen del tanque. Originalmente, el tanque contiene $\SI{0.110}{\cubic\metre}$ de aire a $\SI{0.355}{atm}$ de presión. Se tira lentamente del pistón hasta aumentar el volumen del aire a $\SI{0.390}{\cubic\metre}$. Si la temperatura permanece constante, ¿qué valor final tiene la presión?
 \end{Exercise}
 \begin{Answer}
@@ -34,6 +36,8 @@
 \end{Answer}
 %
 \begin{Exercise}
+  \ifthenelse{\equal{\seleccionados}{true}}
+  {\addToList{xyz-primerppio}{\ExerciseHeaderNB}}{}
   Seis moles de gas ideal están en un cilindro provisto en un extremo con un pistón móvil. La temperatura inicial del gas es $\SI{27.0}{\celsius}$ y se desplaza el pistón manteniendo la presión del gas constante. Calcule la temperatura final del gas una vez que haya efectuado $\SI{2.4}{\kilo\joule}$ de trabajo.
 \end{Exercise}
 \begin{Answer}
@@ -97,6 +101,8 @@
 \end{Answer}
 %
 \begin{Exercise}\label{p:primerppio02}
+  \ifthenelse{\equal{\seleccionados}{true}}
+  {\addToList{xyz-primerppio}{\ExerciseHeaderNB}}{}
   Considere el ciclo cerrado $a\rightarrow b \rightarrow c \rightarrow d \rightarrow a$ mostrado en la figura \ref{f:primerppio02}. \textit{a}) Encuentre una expresión para el trabajo total efectuado por el sistema en este proceso. \textit{b}) Encuentre una expresión para el trabajo total efectuado por el sistema si el  ciclo se recorre en sentido opuesto.
 \end{Exercise}
 \begin{Answer}
@@ -179,6 +185,8 @@
 \end{center}
 %
 \begin{Exercise}\label{p:primerppio04}
+  \ifthenelse{\equal{\seleccionados}{true}}
+  {\addToList{xyz-primerppio}{\ExerciseHeaderNB}}{}
   El gráfico en la figura \ref{f:primerppio04} muestra un diagrama $p$-$V$ de $\SI{3.25}{\mole}$ de helio ideal gaseoso. La parte $c \rightarrow a$ de este proceso es isotérmica. \textit{a}) Calcule el calor intercambiado por el helio en los procesos $a \rightarrow b$, $b \rightarrow c$ y $c \rightarrow a$. \textit{b}) Calcule la variación de energía interna del He en esos mismos procesos.
 \end{Exercise}
 \begin{Answer}
@@ -263,6 +271,17 @@
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:primerppio05}\label{f:primerppio05}}
 \end{center}
+%
+\begin{Exercise}
+  \ifthenelse{\equal{\seleccionados}{true}}
+  {\addToList{xyz-primerppio}{\ExerciseHeaderNB}}{}
+  Se colocan $\SI{0.20}{\mole}$ de un gas ideal diatómico en un recipiente a $\SI{3.0}{atm}$ y $\SI{500}{\kelvin}$. Se efectúa con el gas el siguiente ciclo: \textit{i}) Se expande isotérmicamente desde el estado \textit{A} hasta duplicar su volumen llegando al estado \textit{B}. \textit{ii}) A volumen constante se reduce su temperatura hasta $\SI{300}{\kelvin}$, alcanzando el estado \textit{C}. \textit{iii}) A presión constante se reduce su volumen hasta el volumen inicial (estado \textit{D}). \textit{iv}) El gas aumenta su temperatura a volumen constante hasta el estado \textit{A}. Para este ciclo se pide: \textit{a}) Realizar un diagrama $p-V$ indicando en qué procesos el gas realiza o recibe trabajo y en cuáles absorbe o cede calor. \textit{b}) Calcular el trabajo neto realizado por el gas. \textit{c}) Calcular el cociente entre el trabajo realizado neto y el calor absorbido por el gas.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{b}) $W = $\\ \textit{c}) 
+  \end{minipage}
+\end{Answer}
 %
 \begin{Exercise}
   Un mol de un gas ideal diatómico se comprime lentamente a un tercio de su volumen original. En esta compresión, la magnitud del trabajo realizado sobre el gas es $\SI{600}{\joule}$. \textit{a}) Si el proceso es isotérmico, ¿cuál es el valor del calor $Q$ para el gas? ¿El flujo de calor es hacia adentro o hacia afuera del gas? \textit{b}) Si el proceso es isobárico, ¿cuál es el cambio en la energía interna del gas? ¿Aumenta o disminuye su energía interna?

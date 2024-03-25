@@ -71,6 +71,12 @@
 % \addcontentsline{toc}{section}{Unnumbered Section}
 
   \input{termodinamica/termo_portada.code}
+  \ifthenelse{\equal{\seleccionados}{true}}
+    {%Imprime una lista de ejercicios seleccionados
+        \input{termodinamica/termo_seleccionados.code}
+    }
+    {}
+
   \input{termodinamica/termo_calorimetria.code}
   \input{termodinamica/termo_transmision.code}
   \input{termodinamica/termo_primerppio.code}

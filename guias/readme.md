@@ -1,4 +1,14 @@
 
+Imprimir lista de ejercicios seleccionados para hacer en clase:
+guias_newcommands: {\seleccionados}{true}
+
+\defineList{xyz}
+\addToList{xyz}{First item on my list.}
+Here is my XYZ list:
+\printList{xyz}
+
+
+
 Con espacio para anotar:
 \usepackage[a4paper,paperwidth=847pt, textheight=650pt, textwidth=418pt,top=2.5cm,bottom=2.5cm]{geometry}
 \setlength{\oddsidemargin}{17pt}
